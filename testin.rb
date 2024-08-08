@@ -47,3 +47,34 @@ test_scores[0].pop
 # => 100
 test_scores
 # => [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
+
+# Iterating over nested arrays
+# Iterating over nested arrays using the #each_with_index method
+new_array = teacher_mailboxes.each_with_index do |row, index_row|
+  puts "Row: #{index_row} = #{row}"
+end
+p new_array
+#[["Adams", "Baker", "Clark", "Davis"], ["Jones", "Lewis", "Lopez", "Moore"], ["Perez", "Scott", "Smith", "Young"]]
+
+# Iterating over individual elements inside of each row, here we shall need to nest another #each_with_index method
+indivual_ele = teacher_mailboxes.each_with_index do |row, index_row|
+  row.each_with_index do |teacher, column_index|
+    puts "Row: #{index_row} Column: #{column_index} = #{teacher}"
+  end
+end
+p indivual_ele
+# Row: 0 Column: 0 = Adams
+# Row: 0 Column: 1 = Baker
+# Row: 0 Column: 2 = Clark
+# Row: 0 Column: 3 = Davis
+
+# Row: 1 Column: 0 = Jones
+# Row: 1 Column: 1 = Lewis
+# Row: 1 Column: 2 = Lopez
+# Row: 1 Column: 3 = Moore
+
+# Row: 2 Column: 0 = Perez
+# Row: 2 Column: 1 = Scott
+# Row: 2 Column: 2 = Smith
+# Row: 2 Column: 3 = Young
+# => [["Adams", "Baker", "Clark", "Davis"], ["Jones", "Lewis", "Lopez", "Moore"], ["Perez", "Scott", "Smith", "Young"]]
