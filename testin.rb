@@ -85,3 +85,42 @@ p indivual_ele
 teacher_mailboxes.flatten.each do |teacher|
   puts "Teacher #{teacher} is Awesome!"
 end
+
+# Teacher Adams is Awesome!
+# Teacher Baker is Awesome!
+# Teacher Clark is Awesome!
+# Teacher Davis is Awesome!
+# Teacher Jones is Awesome!
+# Teacher Lewis is Awesome!
+# Teacher Lopez is Awesome!
+# Teacher Moore is Awesome!
+# Teacher Perez is Awesome!
+# Teacher Scott is Awesome!
+# Teacher Smith is Awesome!
+# Teacher Young is Awesome!
+# => ["Adams", "Baker", "Clark", "Davis", "Jones", "Lewis", "Lopez", "Moore", "Perez", "Scott", "Smith", "Young"]
+
+# Adding more predicate enumerable methods
+# To find from the test_scores, whether  any of the students scored above 80 on everything
+test_scores = [
+  [97, 76, 79, 93],
+  [79, 84, 76, 79],
+  [88, 67, 64, 76],
+  [94, 55, 67, 81]
+]
+
+show1 = test_scores.any? do |students|
+  # any? how it works is that it will return true if any of the students scored above 80 on everything
+  students.all? {|student| student > 80}
+  # all? how it works is that it will return true if all the students scored above 80 on everything
+end
+
+p show1
+
+# When we switch the all? to any? we get the following output
+show2 = test_scores.all? do |students|
+  students.any? {|student| student > 80}
+end
+
+p show2
+# The results are different, because now it is determining if all of the nested arrays contain any number over 80. This returns true, because each of the nested arrays have at least one number over 80.
