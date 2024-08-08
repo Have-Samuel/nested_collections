@@ -17,3 +17,21 @@ puts vechiles[:alice][:color] # => nil
 puts vechiles.dig(:alice, :color) # => nil
 puts vechiles.dig(:bob, :color) # => nil
 
+# Adding and removing elements
+# Adding elements
+# To add elements to a hash, you can use the bracket notation or the store method.
+vechiles[:edward] = {year: 2020, model: "Tesla", make: "Model 3"}
+puts vechiles
+# => {:alice=>{:year=>2010, :model=>"Toyota", :make=>"Corolla"}, :bob=>{:year=>2015, :model=>"Ford", :make=>"Fusion"}, :charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :dave=>{:year=>2019, :model=>"Honda", :make=>"Civic"}, :edward=>{:year=>2020, :model=>"Tesla", :make=>"Model 3"}}
+
+# And adding elements to a hash using the store method
+vechiles.store(:frank, {year: 2021, model: "BMW", make: "M3"})
+puts vechiles
+# => {:alice=>{:year=>2010, :model=>"Toyota", :make=>"Corolla"}, :bob=>{:year=>2015, :model=>"Ford", :make=>"Fusion"}, :charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :dave=>{:year=>2019, :model=>"Honda", :make=>"Civic"}, :edward=>{:year=>2020, :model=>"Tesla", :make=>"Model 3"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3"}}
+
+# Adding key-value pairs to a hash
+vechiles[:edward][:color] = "red"
+puts vechiles
+vechiles[:frank][:color] = "blue"
+puts vechiles
+# => {:alice=>{:year=>2010, :model=>"Toyota", :make=>"Corolla"}, :bob=>{:year=>2015, :model=>"Ford", :make=>"Fusion"}, :charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :dave=>{:year=>2019, :model=>"Honda", :make=>"Civic"}, :edward=>{:year=>2020, :model=>"Tesla", :make=>"Model 3", :color=>"red"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
