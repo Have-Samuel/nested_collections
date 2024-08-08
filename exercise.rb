@@ -13,5 +13,16 @@ contacts = {
 }
 
 contacts.each do |person, data|
+  # Iterate for each person and data
   puts "#{person}'s #{data}"
+  # Iterate for each attribute and value
+  data.each do |attribute, value|
+    puts "#{attribute}: #{value}"
+    # Iterate for each value in the favorite_ice_cream_flavors
+    if attribute == :favorite_ice_cream_flavors
+      value.each do |flavour|
+        puts "My favorite ice cream flavor is: #{flavour}"
+      end
+    end
+  end
 end
