@@ -77,6 +77,6 @@ end
 # OR 
 vechiles.map do |name, year|
   if year[:year] >= 2017
-  puts "#{name} owns a vechile of the year #{year[:year]}"
+  puts "#{name} owns a vechile of the year #{year[:year]}".compact
   end
 end
