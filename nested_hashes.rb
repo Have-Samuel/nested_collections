@@ -35,3 +35,16 @@ puts vechiles
 vechiles[:frank][:color] = "blue"
 puts vechiles
 # => {:alice=>{:year=>2010, :model=>"Toyota", :make=>"Corolla"}, :bob=>{:year=>2015, :model=>"Ford", :make=>"Fusion"}, :charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :dave=>{:year=>2019, :model=>"Honda", :make=>"Civic"}, :edward=>{:year=>2020, :model=>"Tesla", :make=>"Model 3", :color=>"red"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
+
+# Removing elements
+# To remove elements from a hash, you can use the delete method, just like with arrays.
+puts vechiles
+#  => {:alice=>{:year=>2010, :model=>"Toyota", :make=>"Corolla"}, :bob=>{:year=>2015, :model=>"Ford", :make=>"Fusion"}, :charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :dave=>{:year=>2019, :model=>"Honda", :make=>"Civic"}, :edward=>{:year=>2020, :model=>"Tesla", :make=>"Model 3", :color=>"red"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
+vechiles.delete(:dave, :edward)
+puts vechiles
+# => {:alice=>{:year=>2010, :model=>"Toyota", :make=>"Corolla"}, :bob=>{:year=>2015, :model=>"Ford", :make=>"Fusion"}, :charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
+
+# Then deleting a key-value pair from a hash, We have to fast specify indivdual of the key-value pair, and then the key.
+vechiles.alice.delete(:make)
+puts vechiles.alice
+# => {:year=>2010, :model=>"Toyota"}
