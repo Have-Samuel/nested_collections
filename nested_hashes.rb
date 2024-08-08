@@ -49,15 +49,21 @@ vechiles[:alice].delete(:make)
 puts vechiles[:alice]
 # => {:year=>2010, :model=>"Toyota"}
 
-# Methods
+# METHODS FOR ITERATING OVER HASHES
 # Let's gets vechiles of the year 2017 and above, and from the documentation, we could use the select method.
-# Multiple lines
+# vechiles = {
+# alice: {year: 2010, model: "Toyota", make: "Corolla"},
+#  bob: {year: 2015, model: "Ford", make: "Fusion"},
+# charlie: {year: 2018, model: "Chevy", make: "Malibu"},
+#  dave: {year: 2019, model: "Honda", make: "Civic"}
+#}
+## Multiple lines
 vechiles.select do |name, date|
  date[:year] >= 2017
  end
 # => {:charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
 # OR Single line
-vechiles.select { |name, date| date[:year] >= 2017 }
+newer = vechiles.select { |name, date| date[:year] >= 2017 }
+puts newer
 # => {:charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
-# 
-#
+
