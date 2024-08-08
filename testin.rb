@@ -15,3 +15,35 @@ immutable[0][0] = 1000
 immutable
 # [[1000, nil], [nil, nil], [nil, nil]]
 # Changing the value of the first element of the first nested array does not affect the other nested arrays.
+
+# Adding and removing elements
+# Adding elements
+# To add elements to an array, you can use the push method or the shovel operator (<<).
+test_scores = [
+  [97, 76, 79, 93],
+  [79, 84, 76, 79],
+  [88, 67, 64, 76],
+  [94, 55, 67, 81]
+]
+
+teacher_mailboxes = [
+  ["Adams", "Baker", "Clark", "Davis"],
+  ["Jones", "Lewis", "Lopez", "Moore"],
+  ["Perez", "Scott", "Smith", "Young"]
+]
+
+test_scores << [100, 99, 98, 97]
+# => [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81], [100, 99, 98, 97]]
+test_scores[0].push(100)
+# => [97, 76, 79, 93, 100]
+test_scores
+# => [[97, 76, 79, 93, 100], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81], [100, 99, 98, 97]]
+
+# Removing elements
+# To remove elements from an array, you can use the pop method or the delete method.
+test_scores.pop
+# => [100, 99, 98, 97]
+test_scores[0].pop
+# => 100
+test_scores
+# => [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
