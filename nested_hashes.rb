@@ -67,3 +67,16 @@ newer = vechiles.select { |name, date| date[:year] >= 2017 }
 puts newer
 # => {:charlie=>{:year=>2018, :model=>"Chevy", :make=>"Malibu"}, :frank=>{:year=>2021, :model=>"BMW", :make=>"M3", :color=>"blue"}}
 
+# Finding names of owners, whose vechiles are of the year 2017 and above
+vechiles.collect do |name, year|
+  if year[:year] >= 2017
+  puts "#{name} owns a vechile of the year #{year[:year]}"
+  end
+end
+
+# OR 
+vechiles.map do |name, year|
+  if year[:year] >= 2017
+  puts "#{name} owns a vechile of the year #{year[:year]}"
+  end
+end
