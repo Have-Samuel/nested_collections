@@ -78,3 +78,10 @@ p indivual_ele
 # Row: 2 Column: 2 = Smith
 # Row: 2 Column: 3 = Young
 # => [["Adams", "Baker", "Clark", "Davis"], ["Jones", "Lewis", "Lopez", "Moore"], ["Perez", "Scott", "Smith", "Young"]]
+
+# Flattening nested arrays
+# To flatten a nested array, you can use the #flatten method.
+# Even these methods are contrived, We can use FLATTEN mtd to get each teacher's name
+teacher_mailboxes.flatten.each do |teacher|
+  puts "Teacher #{teacher} is Awesome!"
+end
