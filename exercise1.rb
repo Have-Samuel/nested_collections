@@ -47,6 +47,7 @@ end
 def add_seat_to_row(chart, row_index, seat_to_add)
   # take a chart (2d array)  and add seat_to_add to the end of the row that is
   # at row_index index of the chart, then return the chart
+  chart[row_index].push(seat_to_add)
 end
 
 def add_another_row(chart, row_to_add)
