@@ -53,6 +53,8 @@ end
 def add_another_row(chart, row_to_add)
   # take a chart and add row_to_add to the end of the chart,
   # then return the chart.
+  chart.push(row_to_add)
+  chart << row_to_add
 end
 
 def delete_seat_from_row(chart, row_index, seat_index)
