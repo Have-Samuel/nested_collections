@@ -14,6 +14,8 @@ end
 def add_information_about_language(languages, language_name, info_key, info_value)
   # Take languages and add the key/value pair info_key/info_value to the nested
   # hash of language_name, then return the updated languages hash
+  languages[language_name][info_key] = info_value
+  languages
 end
 
 def add_language(languages, language_name, language_info_value)
