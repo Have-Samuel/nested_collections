@@ -7,6 +7,8 @@ def find_language_information(languages, language_name)
   #   ruby: { initial_release: 'December 25, 1996', is_beautiful?: true },
   #   javascript: { initial_release: 'December 4, 1995', is_beautiful?: false }
   # }
+  languages[language_name]
+  # That is the solution to the problem. How? The languages hash is a nested hash, and the language_name is a symbol. The solution is to access the value of the language_name key in the languages hash. This will return another hash that contains the information about the language.
 end
 
 def add_information_about_language(languages, language_name, info_key, info_value)
