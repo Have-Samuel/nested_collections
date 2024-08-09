@@ -80,6 +80,16 @@ p indivual_ele
 # => [["Adams", "Baker", "Clark", "Davis"], ["Jones", "Lewis", "Lopez", "Moore"], ["Perez", "Scott", "Smith", "Young"]]
 
 # Flattening nested arrays
+# What does flattening a nested array mean?
+# Flattening a nested array means converting a multi-dimensional array into a one-dimensional array.
+# example:
+# teacher_mailboxes = [
+#  ["Adams", "Baker", "Clark", "Davis"],
+#  ["Jones", "Lewis", "Lopez", "Moore"],
+#  ["Perez", "Scott", "Smith", "Young"]
+#  ]
+#  teacher_mailboxes.flatten
+#  => ["Adams", "Baker", "Clark", "Davis", "Jones", "Lewis", "Lopez", "Moore", "Perez", "Scott", "Smith", "Young"]
 # To flatten a nested array, you can use the #flatten method.
 # Even these methods are contrived, We can use FLATTEN mtd to get each teacher's name
 teacher_mailboxes.flatten.each do |teacher|
