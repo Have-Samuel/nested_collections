@@ -41,6 +41,7 @@ def blank_seating_chart(number_of_rows, seats_per_row)
 
   # NOTE: if one of the nested arrays is changed, the others should **not**
   # change with it
+  Array.new(number_of_rows) { Array.new(seats_per_row)}
 end
 
 def add_seat_to_row(chart, row_index, seat_to_add)
