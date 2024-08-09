@@ -76,6 +76,12 @@ def count_empty_seats(chart)
   # take a chart and return the number of empty (nil) seats in it
 
   # NOTE: `chart` should **not** be mutated
+  chart.flatten.count(nil)
+  # What does the flatten method do?
+  # The flatten method returns a new array that is a one-dimensional flattening of the original array.
+  # It means that it converts a multi-dimensional array into a one-dimensional array.
+  # What does the count method do?
+  # The count method returns the number of elements in the array that meet the condition specified in the block.
 end
 
 def find_favorite(array_of_hash_objects)
@@ -92,4 +98,10 @@ def find_favorite(array_of_hash_objects)
 
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key
+  array_of_hash_objects.find { |hash| hash[:is_my_favorite?] == true }
+
+  # What does the find method do?
+  # The find method returns the first element in the array that meets the condition specified in the block.
+  # In this case, it returns the first hash that has the key/value pair :is_my_favorite? => true.
+  # If no hash meets the condition, it returns nil.
 end
